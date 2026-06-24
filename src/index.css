@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply antialiased;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #0A0A0A;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.015) 0,
+        rgba(255, 255, 255, 0.015) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+    color: #FFFFFF;
+    font-feature-settings: 'cv11', 'ss01';
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Anton', 'Impact', system-ui, sans-serif;
+    letter-spacing: 0.01em;
+  }
+
+  button {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#EF4444] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0A];
+  }
+
+  input,
+  textarea,
+  select {
+    @apply focus:outline-none focus:ring-2 focus:ring-[#EF4444] focus:border-transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0A0A0A;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #EF4444;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-grid {
+    background-image: linear-gradient(rgba(239, 68, 68, 0.08) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(239, 68, 68, 0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .tape-card {
+    background-color: #111111;
+    border: 1px solid #FFFFFF;
+    box-shadow: 6px 6px 0 0 #FFFFFF;
+  }
+
+  .tape-card-red {
+    background-color: #111111;
+    border: 1px solid #EF4444;
+    box-shadow: 6px 6px 0 0 #EF4444;
+  }
+
+  .tape-card-yellow {
+    background-color: #111111;
+    border: 1px solid #FACC15;
+    box-shadow: 6px 6px 0 0 #FACC15;
+  }
+
+  .tape-btn {
+    background-color: #EF4444;
+    color: #0A0A0A;
+    border: 1px solid #FFFFFF;
+    box-shadow: 4px 4px 0 0 #FFFFFF;
+    font-family: 'Anton', 'Impact', sans-serif;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: transform 120ms ease-out, box-shadow 120ms ease-out;
+  }
+
+  .tape-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 #FACC15;
+  }
+
+  .tape-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 0 transparent;
+  }
+
+  .tape-headline {
+    font-family: 'Anton', 'Impact', sans-serif;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .tape-divider {
+    border-top: 2px dashed #FFFFFF;
+    opacity: 0.35;
+  }
+
+  .tape-scanlines {
+    position: relative;
+  }
+  .tape-scanlines::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.04) 0,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+  }
+}
